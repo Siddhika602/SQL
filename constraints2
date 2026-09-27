@@ -1,0 +1,59 @@
+CREATE DATABASE university;
+USE university;
+-- unique constraint
+CREATE TABLE student(
+    phonenbr INT UNIQUE
+);
+
+INSERT INTO student(phonenbr)
+VALUES
+(123),
+(456);
+-- (123)
+
+-- not null constraint
+CREATE TABLE student1(
+    age INT,
+    rollno INT NOT NULL
+);
+INSERT INTO student1(age,rollno)
+VALUES (27,1);
+
+-- check constraint
+CREATE TABLE student3(
+    age INT CHECK(age>18)
+);
+INSERT INTO student3(age)
+-- VALUES (17);
+VALUES (21);
+
+-- default constraint
+CREATE TABLE student5(
+    schoolName VARCHAR(50) DEFAULT 'XYZ',
+    age INT
+);
+INSERT INTO student5(age)
+VALUES (19);
+
+-- primary key constraint
+CREATE TABLE student6(
+    age INT,
+    rollno INT PRIMARY KEY
+);
+-- unique
+INSERT INTO student6(age,rollno)
+VALUES
+(12,1),
+(13,2);
+-- (14,2)
+-- not null
+INSERT INTO student6(age)
+VALUES
+(12);
+
+-- foreign key constraint
+CREATE TABLE course(
+    courseName VARCHAR(50),
+    rollno INT,
+    FOREIGN KEY (rollno) REFERENCES student6(rollno)
+);
