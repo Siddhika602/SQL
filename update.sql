@@ -24,7 +24,7 @@ VALUES
 -- 4. See all the data
 SELECT * FROM employee;
 
--- updation
+-- updation of the salary and name of the employee
 UPDATE employee
 SET salary=50000
 WHERE department="HR";
@@ -34,3 +34,5 @@ SET SQL_SAFE_UPDATES=0;
 UPDATE employee
 SET name="raj"
 WHERE name="raaj";
+
+
