@@ -20,6 +20,15 @@ MODIFY age VARCHAR(3);
 ALTER TABLE employee
 CHANGE age emp_age VARCHAR(3);
 
--- rename command
+-- Rename command
 ALTER TABLE employee
 RENAME COLUMN emp_age TO age;
+
+-- Rename command for table
+RENAME TABLE employee TO employees;
+SELECT * FROM employees;
+
+-- Rename command for column
+ALTER TABLE employees
+RENAME COLUMN name TO emp_name;
+
