@@ -32,3 +32,18 @@ SELECT * FROM employees;
 ALTER TABLE employees
 RENAME COLUMN name TO emp_name;
 
+-- Truncate command
+CREATE TABLE salarydetail(
+    salary INT,
+    increement INT
+);
+INSERT INTO salarydetail(salary,increement)
+VALUES
+(1200,6),
+(1500,4);
+
+SELECT * FROM salarydetail;
+
+TRUNCATE TABLE salarydetail;
+
+
