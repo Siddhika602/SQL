@@ -38,6 +38,23 @@ WHERE name LIKE "A%";
 SELECT * FROM employee
 WHERE name LIKE "_A%";
 
+-- Clause in SQL
+-- Clause are like tools/conditions that help us to make queries more specific or decide which data to fetch.
+
+-- Where clause
+SELECT * FROM employee
+WHERE age>21;
+
+-- Limit clause
+SELECT * FROM employee
+LIMIT 2;
+
+-- order by clause
+SELECT * FROM employee
+ORDER BY salary DESC;
+-- by default is in ascending order
+
+
 -- BETWEEN operator
 SELECT * FROM employee
 WHERE salary BETWEEN 1200 AND 1500;
