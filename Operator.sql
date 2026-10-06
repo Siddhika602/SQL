@@ -58,3 +58,16 @@ ORDER BY salary DESC;
 -- BETWEEN operator
 SELECT * FROM employee
 WHERE salary BETWEEN 1200 AND 1500;
+
+-- GroupBy clause- group rows that have the same value into together
+SELECT department,AVG(salary) AS avgsal
+FROM employee
+GROUP BY(department);
+
+-- Having clause- like where clause but it works on the aggregated data
+SELECT department, AVG(salary) AS avg_sal
+FROM employee
+GROUP BY department
+HAVING avg_sal>1500;
+
+
