@@ -72,6 +72,12 @@ UNION
 SELECT customer.id,orders.ordername,customer.name
 FROM customer
 RIGHT JOIN orders
-ON customer.id=orders.id; 
+ON customer.id=orders.id;
+
+-- Cross Join:-
+-- It combines rows of the first table with every row of the second table. New table rows are m*n
+SELECT customer.id,orders.ordername,customer.name
+FROM customer
+CROSS JOIN orders; 
 
 
