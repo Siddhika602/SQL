@@ -62,3 +62,16 @@ FROM customer
 RIGHT JOIN orders
 ON customer.id=orders.id;
 
+-- Full Outer Join
+-- It returns the matching rows of both left and right table and also includes all the rows from both the tables even if they dont have matching rows
+SELECT customer.id,orders.ordername,customer.name
+FROM customer
+LEFT JOIN orders
+ON customer.id=orders.id
+UNION
+SELECT customer.id,orders.ordername,customer.name
+FROM customer
+RIGHT JOIN orders
+ON customer.id=orders.id; 
+
+
