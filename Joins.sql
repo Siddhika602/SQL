@@ -54,3 +54,11 @@ SELECT customer.id,orders.ordername,customer.name
 FROM customer
 LEFT JOIN orders
 ON customer.id=orders.id;
+
+-- Right Outer Join:-
+-- It is used to fetch all the records from the right table along with the matched records from the left record
+SELECT customer.id,orders.ordername,customer.name
+FROM customer
+RIGHT JOIN orders
+ON customer.id=orders.id;
+
