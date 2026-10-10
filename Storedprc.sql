@@ -22,3 +22,13 @@ SELECT * FROM orders WHERE id=id;
 END;
 
 CALL getOrderDetailsById(2);
+
+
+-- VIEWS IN SQL
+-- A view is a virtual table in SQL. It helps in provinding a filtered view of data for security purpose.
+USE company;
+CREATE VIEW employeeView AS 
+SELECT id,name,city FROM employee;
+
+SELECT id FROM employeeView;
+
