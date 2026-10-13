@@ -46,4 +46,39 @@ name LIKE 'R%';
 SELECT DISTINCT salary
 FROM employee;
 
+-- Q-6. Write a query to find the second highest salary in a table.
+SELECT MAX(salary)
+FROM employee
+WHERE salary <> (SELECT 
+MAX(salary) FROM employee
+);
+
+-- Q-7. Write a query to find the nth highest salary in a table.
+SELECT DISTINCT salary
+FROM tablename
+ORDER BY salary DESC
+LIMIT n-1,1;
+
+-- Q-8. Write a query to find the top 2 highest salaries from table.
+SELECT salary 
+FROM tablename
+ORDER BY salary DESC
+LIMIT 2;
+
+-- Q-9. Write a query to calculate the total salary and average salary in the department.
+SELECT department,SUM(salary) AS total_salary,AVG(salary) AS avg_salary
+FROM employee
+GROUP BY department;
+
+-- Q-10. Write a query to find the rows where a department has NULL values.
+SELECT * FROM employee
+WHERE department IS NULL;
+
+-- Q-11. Write a query to find the duplicate rows in employee for column department.
+SELECT department,COUNT(*)
+FROM employee
+GROUP BY department
+HAVING COUNT(*)>1;
+
+
 
